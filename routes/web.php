@@ -42,6 +42,7 @@ Route::get('/apply-leave',[LeaveController::class,'leave']);
 Route::post('/leave',[LeaveController::class,'applyLeave']);
 Route::get('/status',[LeaveController::class,'leaveStatus']);
 Route::post('/punch-in',[PunchController::class,'punchIn']);
+Route::post('/punch-out',[PunchController::class,'punchOut']);
 
 // Admin dashboard
 Route::get('/admin-dashboard',[AdminController::class,'index']);
@@ -49,4 +50,5 @@ Route::get('/users-list',[AdminController::class,'show']);
 Route::delete('/users/{user}', [AdminController::class,'destroy'])->name('users.destroy');
 Route::get('/leave-entries', [AdminController::class,'leaveEntries']);
 Route::put('/leave/{id}/update-status', [AdminController::class,'updateLeaveStatus'])->name('updateLeaveStatus');
-
+Route::get('/attendance',[PunchController::class,'attendance']);
+Route::get('/attendance-sheet',[PunchController::class,'attendanceSheet']);
